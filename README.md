@@ -1,5 +1,5 @@
 # Data-labeling-fiftyone-CVAT-portfolioportfolio
-This repository will showcase that I can: 
+This repository will showcase ability in manipulation and initial analysis of a dataset: 
 
 1-Load and inspect datasets
 
