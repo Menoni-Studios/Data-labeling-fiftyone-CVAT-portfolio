@@ -1,3 +1,5 @@
+ENVIRONMENT SETUP:
+
 1-Enviroment creation in Python though Anaconda:
     Command: conda create -n <env_name> python=3.8
 
@@ -10,7 +12,7 @@
     Command: Open VS Code: install Python extension and select the created environment from the bottom left corner.
 
 4-Install the required packages:
-    Command: pip install -r requirements.txt    
+    Command: pip install FiftyOne pandas opencv numpy matplotlib scikit scikit-image= seaborn tqdm cvat    
 
-5-Install FiftyOne:
-    Command: pip install fiftyone    
+After the set up of the steps mentioned above, you can start to work in VS Code with the created environment and the installed packages. 
+Make sure to check the versions of the installed packages to ensure compatibility with your project requirements.
