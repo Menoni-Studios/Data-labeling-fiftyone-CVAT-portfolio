@@ -11,6 +11,7 @@ import fiftyone.utils.huggingface as fouh
 Code:
 
 //In this case the dataset is loaded from Huggingface
+
 dataset = fouh.load_from_hub(
     "Voxel51/Coursera_lecture_dataset_train", 
     dataset_name="lecture_dataset_train", 
@@ -22,6 +23,7 @@ dataset = fouh.load_from_hub(
 Code:
 
 //This will lunch FiftyOne with the dataset for a quick visual view
+
 session = fo.launch_app(Voxel51/Coursera_lecture_dataset_train)
 
 ![Website Screenshot](../assets/1.png)
@@ -31,6 +33,7 @@ session = fo.launch_app(Voxel51/Coursera_lecture_dataset_train)
 Code:
 
 //The whole code will create a initial profile of the dataset
+
 import fiftyone as fo
 import fiftyone.zoo as foz
 from collections import Counter
