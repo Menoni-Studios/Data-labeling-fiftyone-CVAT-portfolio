@@ -24,6 +24,7 @@ session = fo.launch_app(Voxel51/Coursera_lecture_dataset_train)
 # Profling FityOne dataset
 
 Code:
+
 import fiftyone as fo
 import fiftyone.zoo as foz
 from collections import Counter
@@ -92,6 +93,9 @@ print("\n====================================")
 # Initial Observations
 
 -Dataset contains object detection annotations.
+
 -Bounding boxes are available through the ground_truth field.
+
 -Some classes appear more frequently than others.
+
 -The dataset is suitable for annotation review and quality analysis using FiftyOne and CVAT.
