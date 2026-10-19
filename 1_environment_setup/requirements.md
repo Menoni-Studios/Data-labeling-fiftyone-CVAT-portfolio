@@ -1,4 +1,4 @@
-ENVIRONMENT SETUP:
+# ENVIRONMENT SETUP
 
 1-Enviroment creation in Python though Anaconda:
     Command: conda create -n <env_name> python=3.8
