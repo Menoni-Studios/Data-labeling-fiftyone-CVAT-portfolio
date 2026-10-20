@@ -1,5 +1,5 @@
-# Data-labeling-fiftyone-CVAT-portfolio
-This repository will showcase ability in manipulation and initial analysis of a dataset: 
+# Data labeling showcase using FiftyOne and CVAT
+This repository will showcase: dataset inspection, annotation workflows, and exports between FiftyOne and CVAT.  
 
 1-Load and inspect datasets
 
