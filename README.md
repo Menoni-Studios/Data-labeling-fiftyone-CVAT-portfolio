@@ -17,4 +17,4 @@ This repository will showcase ability in manipulation and initial analysis of a 
 
 9-Document your workflow professionally
 
-
+![Website screenshot](assets/1.png)
