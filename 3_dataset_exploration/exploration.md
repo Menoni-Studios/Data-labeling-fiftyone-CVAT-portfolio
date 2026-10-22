@@ -1,4 +1,3 @@
-
 # Profling FityOne dataset
 
 ##### *In VScode run:*
@@ -72,7 +71,7 @@ print("\n====================================")
 
 # Result
 
-![Website screenshot](../assets/2.png)(../assets/2.png)
+![Website screenshot](../assets/2.png)
 
 # Initial Observations
 
