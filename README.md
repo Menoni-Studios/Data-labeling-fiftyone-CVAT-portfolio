@@ -17,4 +17,8 @@ This repository will showcase: dataset inspection, annotation workflows, and exp
 
 9-Document your workflow professionally
 
-![Website screenshot](assets/1.png)
+![](assets/1.png)
+
+![](assets/cvat1.jpeg)
+
+
