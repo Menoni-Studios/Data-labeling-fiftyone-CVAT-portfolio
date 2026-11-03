@@ -1,63 +1,36 @@
-
 # Duplicates
 
-### * Why duplicates harm training.
+### ☑️Why duplicates harm training.
 
-Removing exact duplicates and near-duplicates helps avoid accidental concept imbalance and ensures each sample contributes unique information to model training. Near-duplicates (very similar images or patches) are less valuable for training and can bias evaluation and validation splits.
+#### Removing exact duplicates and near-duplicates helps avoid accidental concept imbalance and ensures each sample contributes unique information to model training. Near-duplicates (very similar images or patches) are less valuable for training and can bias evaluation and validation splits.
 
-### * Definitions: duplicate vs near-duplicate.
+### Definitions: duplicate vs near-duplicate.
 
-#### * Duplicates:
+#### Duplicates:
 
-* Images with identical file contents (same filehash). These are true duplicates and are usually safe to remove or deduplicate automatically.
+*   Images with identical file contents (same filehash). These are true duplicates and are usually safe to remove or deduplicate automatically.
 
-#### * Near-duplicates:
+#### Near-duplicates:
 
-* Images that are visually very similar but not byte-identical (e.g., small crops, color adjustments, re-encodings). These require similarity-based detection and often a manual review before removal.
+*   Images that are visually very similar but not byte-identical (e.g., small crops, color adjustments, re-encodings). These require similarity-based detection and often a manual review before removal.
+    
+*   FiftyOne compute\_similarity, find\_duplicates, compute\_exact\_duplicates
+    
+    *   But first in nessesary to compute embedding:
+        *   What are embeddings: the computer cannot understand “image similarity” directly from raw pixels. Embeddings turn each image into a numeric vector that captures its visual meaning. Once every image has a vector, is possible to measure how close those vectors are and that is how duplicates and near‑duplicates are detected.
+    *   Now is possible find duplicate and near-duplicates. After that the result can be look in FiftyOne interface.
 
-* FiftyOne compute_similarity, find_duplicates, compute_exact_duplicates
+#### ▶️Here the is a demostration in FityOne:
 
-  * But first in nessesary to compute embedding:
-    * What are embeddings: the computer cannot understand “image similarity” directly from raw pixels. Embeddings turn each image into a numeric vector that captures its visual meaning. Once every image has a vector, is possible to measure how close those vectors are and that is how duplicates and near‑duplicates are detected.
-  * Now is possible find duplicate and near-duplicates. After that the result can be look in FiftyOne interface.
-
-#### * Here the is a demostration in FityOne:
-
-* The images are arrange in a way that the representative image appers frist, next to it will be the duplicate/near-duplicate image.
-* This allows fast manual review and identification of rendundat samples.
+*   The images are arrange in a way that the representative image appers frist, next to it will be the duplicate/near-duplicate image.
+*   This allows fast manual review and identification of rendundat samples.
 
 ![img](../assets/duplicates.png)
 
-### Code:
+### \
 
-```
-# Calulate embeddings for the dataset using a pre-trained model from the FiftyOne Model Zoo. 
-# This will generate feature vectors for each image in the dataset, which can be used for tasks such
-# as similarity search, clustering, and outlier detection.
-
-import fiftyone as fo
-import fiftyone.zoo as foz
-import fiftyone.brain as fob
-
-# load or create dataset
-dataset = fo.load_dataset("Voxel51/Coursera_lecture_dataset_test")  # or fo.Dataset.from_dir(...)
-
-# load a zoo model (example: mobilenet_v2)
-import fiftyone.zoo as foz
-
-dataset = fo.load_dataset("Voxel51/Coursera_lecture_dataset_test")
-
-model = foz.load_zoo_model("mobilenet-v2-imagenet-torch")
-
-emb_field = "mobilenet_v2_embeddings"
-dataset.compute_embeddings(
-    model,
-    embeddings_field=emb_field,
-    batch_size=32,
-)
-
-# Verify embeddings were coputed
-print(dataset.first()[emb_field].shape)
+```plaintext
+Code:
 ```
 
 ```
@@ -93,7 +66,6 @@ duplicates_view = similarity_index.duplicates_view(
     id_field="dup_id",
     dist_field="dup_dist",
 )
-
 
 session = fo.launch_app(duplicates_view)
 ```

@@ -1,10 +1,10 @@
-# Compute mistakennes
+# Mistakennes
 
 #### Now we're ready to assess the mistakenness by use AI-assisted tools to identify potentially lack or incorrect annotations and prioritize human review, compare wtih ground truth detections values.
 
 #### We can do so by running the compute\_mistakenness() method from the FiftyOne Brain. Since we are using model predictions to guide the mistakenness process, the better the model, more accurate will be mistakenness suggestions.
 
-## Step 1
+## ☑️Generating predictions
 
 #### A model will be use to generate predictions for us, in this case is "faster-rcnn-resnet50-fpn-coco-torch" that is available through the FifyOne model zoo.
 
@@ -14,15 +14,15 @@
 Code:
 ```
 
-## Step 2
+## ☑️Compute mistakennes
 
-#### No will comput mistakennes, that is a comparison between: Ground truth lables Vs Model predictions.
+#### No will compute mistakennes, that is a comparison between: Ground truth lables Vs Model predictions.
 
 ```plaintext
 Code:
 ```
 
-## Step 3
+## ☑️Fields generated
 
 #### Now will have new fields in the fiftyOne interface:
 
@@ -33,7 +33,7 @@ Code:
 | Possible\_missing | Object predicted by model but missing in GT |
 | Possilbe\_spurious | Ground truth object may not exist<br><br> |
 
-## View the worst images
+## ☑️View worst images
 
 #### After we have the values of mistakennes it is possible lunch FityOne and inspect the images. Here are shown the top 10 most suspicious images (Note: this was made for a subnet of images = 1000, because It take to long to compute).
 
@@ -43,35 +43,23 @@ Code:
 
 ![](../assets/Mist3.png)
 
-```plaintext
-Code:import fiftyone as fo#Find the worst samples in the dataset based on their mistakenness scores. This will sort the samples in descending order of mistakenness, allowing you to identify the samples that are most likely to be misclassified by the model.
-mistake_view = subset.sort_by(
-"mistakenness",
-reverse=True
-)session = fo.launch_app(mistake_view)
-```
-
 #### In this example It is show an image with a hight mistakenness, where the error is a possible class label. When click in the label for the hat, It's show that values are missing.
 
 ![](../assets/Mist1.png)
 
 ```plaintext
-Code:from fiftyone import ViewField as F
-import fiftyone as fomissing_view = subset.match(
-F("possible_missing") > 0.95
-)session = fo.launch_app(missing_view)
+Code:
 ```
 
 #### In this example It is show an image with a hight mistakenness\_loc, so we are looking the field "Mistakennes\_loc", where the error is a possible bad bounding location. When click in the label for the hat, It's show that the bounding box for the hat is mix with the face of the person.
 
 #### <img src="../assets/Mist2.png" alt="" style="font-size: 14px; font-weight: 400;">
 
-```javascript
-Code:from fiftyone import ViewField as F
-import fiftyone as fohigh_mistaken_loc_view = dataset.filter_labels("ground_truth", F("mistakenness_loc") > 0.51)session = fo.launch_app(missing_view)
+```plaintext
+Code:
 ```
 
-## Histogram
+## ☑️Histogram
 
 #### Here we can see a spike for mistakenness score near 1.0 indicates a strong disagreement between the model predictions and the ground-truth annotations.
 
@@ -83,7 +71,7 @@ import fiftyone as fohigh_mistaken_loc_view = dataset.filter_labels("ground_trut
 Code:
 ```
 
-### Some statistics
+### ☑️Some statistics
 
 | Name | Value |
 | --- | --- |
@@ -98,15 +86,16 @@ Code:
 
 #### More than half of the scored samples (168 images, 54.4%) had a mistakenness score greater than 0.95, indicating strong disagreement between model predictions and existing annotations. Indicating potential annotation issues such as missing objects, incorrect labels, and localization errors.
 
-```plaintext
-Code:import numpy as np
-print("Valid samples:", len(mistakenness_scores))
-print("Min:", np.min(mistakenness_scores))
-print("Mean:", np.mean(mistakenness_scores))
-print("Median:", np.median(mistakenness_scores))
-print("Max:", np.max(mistakenness_scores))
-print(
-"Samples > 0.95:",
-sum(score > 0.95 for score in mistakenness_scores)
-)
-```
+### ☑️Code
+
+![](../assets/Pred1.png)
+
+![](../assets/Mist8.png)
+
+![](../assets/Mist9.png)
+
+![](../assets/Mist10.png)
+
+![](../assets/Mist11.png)
+
+![](../assets/Mist12%20%282%29.png)
