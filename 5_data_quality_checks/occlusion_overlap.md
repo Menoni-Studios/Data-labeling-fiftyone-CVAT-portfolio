@@ -1,6 +1,6 @@
 # Occlusion
 
-### \#### Occlusion occurs when an object is partially hidden by another object. For example: a person behind a car, a bicycle behind a fence or a traffic sign partially covered by a tree. Occluded objects are more difficult to annotate consistently and may lead to annotation errors.
+### ☑️Occlusion occurs when an object is partially hidden by another object. For example: a person behind a car, a bicycle behind a fence or a traffic sign partially covered by a tree. Occluded objects are more difficult to annotate consistently and may lead to annotation errors.
 
 ### ☑️Occlusion image example
 
