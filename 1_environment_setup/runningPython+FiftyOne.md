@@ -1,30 +1,15 @@
-# Import libraries
+# Python & FifyOne
 
-The most use libraries are: FiftyOne, pandas, opencv, numpy, matplotlib, scikit scikit-image= seaborn, cvat,  scipy, snorkel, pytorch, sci-kit-learn, tensorFlow.
+### ☑️Load the dataset
 
-*Code:*
+![](../assets/LDS1.png)
 
-import fiftyone as fo
-import fiftyone.utils.huggingface as fouh
+### ☑️Launch the App
 
-# Load the dataset
+#### Now that we have the data set we can lunch FityOne:
 
-*Code:*
+![](../assets/DSLoad.png)
 
-//In this case the dataset is loaded from Huggingface
-
-dataset = fouh.load_from_hub(
-    "Voxel51/Coursera_lecture_dataset_train",
-    dataset_name="lecture_dataset_train",
-    persistent=True
-    )
-
-# Launch the App
-
-*Code:*
-
-//This will lunch FiftyOne with the dataset for a quick visual view
-
-session = fo.launch_app(Voxel51/Coursera_lecture_dataset_train)
+#### Here we can see and work in FityOne:
 
 ![Website Screenshot](../assets/1.png)

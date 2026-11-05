@@ -20,18 +20,14 @@
         *   What are embeddings: the computer cannot understand “image similarity” directly from raw pixels. Embeddings turn each image into a numeric vector that captures its visual meaning. Once every image has a vector, is possible to measure how close those vectors are and that is how duplicates and near‑duplicates are detected.
     *   Now is possible find duplicate and near-duplicates. After that the result can be look in FiftyOne interface.
 
-#### ▶️Here the is a demostration in FityOne:
+### ▶️Here the is a demostration in FityOne:
 
 *   The images are arrange in a way that the representative image appers frist, next to it will be the duplicate/near-duplicate image.
 *   This allows fast manual review and identification of rendundat samples.
 
 ![img](../assets/duplicates.png)
 
-### \
-
-```plaintext
-Code:
-```
+### ✅Code
 
 ```
 #Creation of a similarity index for the dataset using the computed embedding.

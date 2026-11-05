@@ -1,18 +1,20 @@
-# Profling FityOne dataset
+# Profling the DataSet
 
 ![Website screenshot](../assets/2.png)
 
-# Initial Observations
+## ✅Initial Observations
 
-##### ☑️Dataset contains object detection annotations.
+##### ☑️Dataset contains 16638 images.
 
-##### ☑️Bounding boxes are available through the ground_truth field.
+##### ☑️ Dataset contains object detection annotations.
+
+##### ☑️Bounding boxes are available through the ground\_truth field.
 
 ##### ☑️Some classes appear more frequently than others.
 
 ##### ☑️The dataset is suitable for annotation review and quality analysis using FiftyOne and CVAT.
 
-# *Code*
+### *Code*
 
 ```
 #The whole code will create a initial profile of the dataset
@@ -81,17 +83,17 @@ print(f"Average Height: {avg_height:.1f}")
 print("\n====================================")
 ```
 
-# Visualization
+## ☑️Visualization
 
-## ✅Class distribution
+### ✅Class distribution
 
-Show:
+##### Show:
 
--Wich classes dominate the dataset.
+##### \-Wich classes dominate the dataset.
 
--Class imbalance.
+##### \-Class imbalance.
 
--Annotation priorities.
+##### \-Annotation priorities.
 
 ![Website screenshot](../assets/ClassDistribution.jpeg)
 
@@ -128,15 +130,15 @@ plt.savefig("class_distribution.png")
 plt.show()
 ```
 
-## ✅Object per image
+### ✅Object per image
 
-Show:
+##### Show:
 
--How complex are the images of objects and annotations.
+##### \-How complex are the images of objects and annotations.
 
 ![Website Screenshot](../assets/ObjectDistribution.jpeg)
 
-##### *☑️This tells you the dataset is  densely populated with simple, low‑object scenes , while images containing many objects are  rare outliers . The model will mostly learn from images with few objects and high‑object-count images may be harder for the model because they are under‑represented.*
+##### *☑️This tells you the dataset is densely populated with simple, low‑object scenes , while images containing many objects are rare outliers . The model will mostly learn from images with few objects and high‑object-count images may be harder for the model because they are under‑represented.*
 
 ```
 # Objects per image visualization
@@ -166,15 +168,15 @@ plt.savefig("objects_per_image.png")
 plt.show()
 ```
 
-## ✅Bounding boxes size
+### ✅Bounding boxes size
 
-Show:
+##### Show:
 
--How crowded are the annotatios.
+##### \-How crowded are the annotatios.
 
--More smaller boxes will show more complex images.
+##### \-More smaller boxes will show more complex images.
 
--Possible level of error on annotations.
+##### \-Possible level of error on annotations.
 
 ![Website Screenshot](../assets/BoundingBoxesDistribution.jpeg)
 

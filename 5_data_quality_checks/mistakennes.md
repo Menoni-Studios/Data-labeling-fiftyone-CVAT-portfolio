@@ -4,25 +4,17 @@
 
 #### We can do so by running the compute\_mistakenness() method from the FiftyOne Brain. Since we are using model predictions to guide the mistakenness process, the better the model, more accurate will be mistakenness suggestions.
 
-## ☑️Generating predictions
+### ☑️Generating predictions
 
 #### A model will be use to generate predictions for us, in this case is "faster-rcnn-resnet50-fpn-coco-torch" that is available through the FifyOne model zoo.
 
 #### The model was trained on the COCO dataset and can detect 80 common object categories. Generated predictions were compared against the dataset's ground-truth annotations using FiftyOne Brain's mistakenness analysis to identify potentially incorrect, missing, or incomplete annotations.
 
-```plaintext
-Code:
-```
-
-## ☑️Compute mistakennes
+### ☑️Compute mistakennes
 
 #### No will compute mistakennes, that is a comparison between: Ground truth lables Vs Model predictions.
 
-```plaintext
-Code:
-```
-
-## ☑️Fields generated
+### ☑️Fields generated
 
 #### Now will have new fields in the fiftyOne interface:
 
@@ -33,7 +25,7 @@ Code:
 | Possible\_missing | Object predicted by model but missing in GT |
 | Possilbe\_spurious | Ground truth object may not exist<br><br> |
 
-## ☑️View worst images
+### ☑️View worst images
 
 #### After we have the values of mistakennes it is possible lunch FityOne and inspect the images. Here are shown the top 10 most suspicious images (Note: this was made for a subnet of images = 1000, because It take to long to compute).
 
@@ -47,29 +39,17 @@ Code:
 
 ![](../assets/Mist1.png)
 
-```plaintext
-Code:
-```
-
 #### In this example It is show an image with a hight mistakenness\_loc, so we are looking the field "Mistakennes\_loc", where the error is a possible bad bounding location. When click in the label for the hat, It's show that the bounding box for the hat is mix with the face of the person.
 
 #### <img src="../assets/Mist2.png" alt="" style="font-size: 14px; font-weight: 400;">
 
-```plaintext
-Code:
-```
-
-## ☑️Histogram
+### ☑️Histogram
 
 #### Here we can see a spike for mistakenness score near 1.0 indicates a strong disagreement between the model predictions and the ground-truth annotations.
 
 #### This means that among the samples where FiftyOne was able to compute a valid score: many were flagged as highly suspicious they should be prioritized for manual review they may contain missing objects, incorrect labels, or annotation inconsistencies
 
 ## ![](../assets/Mist6.png)
-
-```plaintext
-Code:
-```
 
 ### ☑️Some statistics
 
